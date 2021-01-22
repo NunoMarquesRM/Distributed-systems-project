@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+        <h:form>
+            <br/>
+            <br/>
+            <h1> Iniciar Sessão </h1>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="center">
+                <h:outputLabel for="txtUsername" value="Username: " />
+            </div>
+            <div class="center1">
+                <h:inputText id="txtUsername" value="#{clienteController.novoCliente.email}" class="labelLogin" />
+            </div>
+            <br/>
+            <br/>
+            <div class="center">
+                <h:outputLabel for="txtPassword" value="Password: " />
+            </div>
+            <div class="center1">
+                <h:inputSecret id="txtPassword" value="#{clienteController.novoCliente.password}" />
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div align = "center" >
+                <p:commandButton  action="#{clienteController.login()}" value="Entrar" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+            <br/>
+            <br/>
+            <div align = "center">
+                <p:commandButton immediate="true" action="#{clienteController.logout()}" value="Voltar" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+        </h:form>
+    </h:body>
+</html>

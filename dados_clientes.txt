@@ -1,0 +1,14 @@
+INSERT INTO Cliente(nome, idade, contato, email, password, nivel)
+VALUES ('admin', 23, 123456789, 'admin@admin.pt', 'd033e22ae348aeb5660fc2140aec35850c4da997', 2);
+
+INSERT INTO Cliente(nome, idade, contato, email, password, nivel)
+VALUES ('Maria', 37, 123456798, 'maria@maria.pt', 'e21fc56c1a272b630e0d1439079d0598cf8b8329', 1);
+
+INSERT INTO Cliente(nome, idade, contato, email, password, nivel)
+VALUES ('João', 43, 987654321, 'joao@joao.pt', 'c510cd8607f92e1e09fd0b0d0d035c16d2428fa4', 1);
+
+INSERT INTO Cliente(nome, idade, contato, email, password, nivel)
+VALUES ('Ana', 27, 567432891, 'ana@ana.pt', '72019bbac0b3dac88beac9ddfef0ca808919104f', 1);
+
+INSERT INTO Cliente(nome, idade, contato, email, password, nivel)
+VALUES ('Paulo Silva', 31, 967381326, 'paulo.silva@ubi.pt', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2);

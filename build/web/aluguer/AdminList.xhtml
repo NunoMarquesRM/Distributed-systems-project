@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Lista de  Alugueres</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+        <h1>Lista de Alugueres</h1>
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+
+            <div align="center">
+                <h:outputText escape="false" value="#{bundle.ListAluguerEmpty}" rendered="#{aluguerController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{aluguerController.items.rowCount > 0}">
+                <h:outputText value="#{aluguerController.pagination.pageFirstItem + 1}..#{aluguerController.pagination.pageLastItem + 1}/#{aluguerController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{aluguerController.previousAdmin}" value="#{bundle.Previous} #{aluguerController.pagination.pageSize}" rendered="#{aluguerController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{aluguerController.nextAdmin}" value="#{bundle.Next} #{aluguerController.pagination.pageSize}" rendered="#{aluguerController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{aluguerController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListAluguerTitle_idAluguer}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idAluguer}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListAluguerTitle_dataInicio}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dataInicio}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListAluguerTitle_dataFim}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dataFim}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListAluguerTitle_email}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.email}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListAluguerTitle_idTrotinete}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idTrotinete}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{aluguerController.prepareViewAdmin}" value="#{bundle.ListAluguerViewLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <p:commandButton value="Criar Novo Aluguer" action="#{aluguerController.prepareCreateAdmin}" class="boxlogin">
+                <f:param name="button1" value="10"/>
+            </p:commandButton>
+                <br />
+                <br />
+                <br />
+            <p:commandButton value="Voltar Atrás" action="/cliente/AdminPage" immediate="true" class="boxlogin">
+                <f:param name="button1" value="10"/>
+            </p:commandButton>
+            </div>
+            
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Lista de  Trotinetes</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <br/>
+            <br/>
+            <h1> Lista Trotinetes </h1>
+            <br/>
+            <br/> 
+            <div align="center">
+                <h:outputText escape="false" value="#{bundle.ListTrotineteEmpty}" rendered="#{trotineteController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{trotineteController.items.rowCount > 0}">
+                    <h:outputText value="#{trotineteController.pagination.pageFirstItem + 1}..#{trotineteController.pagination.pageLastItem + 1}/#{trotineteController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{trotineteController.previousAdmin}" value="#{bundle.Previous} #{trotineteController.pagination.pageSize}" rendered="#{trotineteController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{trotineteController.nextAdmin}" value="#{bundle.Next} #{trotineteController.pagination.pageSize}" rendered="#{trotineteController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{trotineteController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_idTrotinete}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idTrotinete}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_nome}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nome}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_marca}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.marca}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_dataRegisto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dataRegisto}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_estado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_localizacao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.localizacao}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_numeroDias}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroDias}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_potencia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.potencia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_velocidadeMaxima}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.velocidadeMaxima}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_tempoDeCarga}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tempoDeCarga}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_tipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_alcance}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alcance}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_litrosDeposito}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.litrosDeposito}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_pesoMaximo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pesoMaximo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTrotineteTitle_email}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{trotineteController.prepareViewAdmin}" value="#{bundle.ListTrotineteViewLink}"/>
+                            <h:outputText value=" "/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <p:commandButton value="Criar Nova Trotinete" action="#{trotineteController.prepareCreateAdmin}" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <p:commandButton value="Voltar Atrás" action="/cliente/AdminPage" immediate="true" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+        </h:form>
+    </h:body>
+</html>

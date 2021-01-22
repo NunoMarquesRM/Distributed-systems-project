@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Inserir  Trotinetes</title>
+        <h:outputStylesheet name="css/Background.css"/>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+    </h:head>
+
+    <h:body class="background">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <br/>
+        <br/>
+        <h1> Inserir Trotinete </h1>
+        <br/>
+        <br/> 
+        <h:form styleClass="jsfcrud_list_form">
+            <div align="center">
+                <h:dataTable value="#{trotineteController.tmp}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_nome}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nome}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_marca}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.marca}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_dataRegisto}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.dataRegisto}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_estado}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.estado}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_localizacao}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.localizacao}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_numeroDias}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.numeroDias}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_potencia}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.potencia}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_velocidadeMaxima}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.velocidadeMaxima}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_tempoDeCarga}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.tempoDeCarga}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_tipo}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.tipo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_alcance}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.alcance}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_litrosDeposito}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.litrosDeposito}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTrotineteTitle_pesoMaximo}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.pesoMaximo}"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </h:form>
+        <h:form>
+            <div align="center">
+                <br />
+                <br />
+                <br />
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{trotineteController.selected.nome}" title="#{bundle.CreateTrotineteTitle_nome}" style="width: 210px;" required="true" requiredMessage="#{bundle.CreateTrotineteRequiredMessage_nome}"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_marca}" for="marca" />
+                    <h:inputText id="marca" value="#{trotineteController.selected.marca}" title="#{bundle.CreateTrotineteTitle_marca}" style="width: 210px;" required="true" requiredMessage="#{bundle.CreateTrotineteRequiredMessage_marca}"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_dataRegisto}" for="dataRegisto" />
+                    <p:calendar id="dataRegisto" mindate="calwidget.today()" maxdate="calwidget.today()" widgetVar="calwidget" value="#{trotineteController.selected.dataRegisto}" placeholder="__/__/____" showOn="button" pattern="dd/MM/yyyy" style="width: 260px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_estado}" for="estado" />
+                    <h:inputText id="estado" value="#{trotineteController.selected.estado}" title="#{bundle.CreateTrotineteTitle_estado}" style="width: 210px;" required="true" requiredMessage="#{bundle.CreateTrotineteRequiredMessage_estado}"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_localizacao}" for="localizacao" />
+                    <h:inputText id="localizacao" value="#{trotineteController.selected.localizacao}" title="#{bundle.CreateTrotineteTitle_localizacao}" style="width: 210px;" required="true" requiredMessage="#{bundle.CreateTrotineteRequiredMessage_localizacao}"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_numeroDias}" for="numeroDias" />
+                    <h:inputText id="numeroDias" value="#{trotineteController.selected.numeroDias}" title="#{bundle.CreateTrotineteTitle_numeroDias}" style="width: 210px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_potencia}" for="potencia" />
+                    <h:inputText id="potencia" value="#{trotineteController.selected.potencia}" title="#{bundle.CreateTrotineteTitle_potencia}" style="width: 210px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_velocidadeMaxima}" for="velocidadeMaxima" />
+                    <h:inputText id="velocidadeMaxima" value="#{trotineteController.selected.velocidadeMaxima}" title="#{bundle.CreateTrotineteTitle_velocidadeMaxima}" style="width: 210px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_tempoDeCarga}" for="tempoDeCarga" />
+                    <h:inputText id="tempoDeCarga" value="#{trotineteController.selected.tempoDeCarga}" title="#{bundle.CreateTrotineteTitle_tempoDeCarga}" style="width: 210px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_tipo}" for="tipo" />
+                    <h:inputText id="tipo" value="#{trotineteController.selected.tipo}" title="#{bundle.CreateTrotineteTitle_tipo}" style="width: 210px;" required="true" requiredMessage="#{bundle.CreateTrotineteRequiredMessage_tipo}"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_alcance}" for="alcance" />
+                    <h:inputText id="alcance" value="#{trotineteController.selected.alcance}" title="#{bundle.CreateTrotineteTitle_alcance}" style="width: 210px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_litrosDeposito}" for="litrosDeposito" />
+                    <h:inputText id="litrosDeposito" value="#{trotineteController.selected.litrosDeposito}" title="#{bundle.CreateTrotineteTitle_litrosDeposito}" style="width: 210px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_pesoMaximo}" for="pesoMaximo" />
+                    <h:inputText id="pesoMaximo" value="#{trotineteController.selected.pesoMaximo}" title="#{bundle.CreateTrotineteTitle_pesoMaximo}" style="width: 210px;"/>
+                    <h:outputLabel value="#{bundle.CreateTrotineteLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{trotineteController.selected.email}" title="#{bundle.CreateTrotineteTitle_email}" style="width: 210px;" required="true" requiredMessage="#{bundle.CreateTrotineteRequiredMessage_email}"/>
+                </h:panelGrid>
+                <br />
+                <p:commandButton value="Guardar" action="#{trotineteController.create}" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <p:commandButton value="Voltar Atrás" action="#{trotineteController.back}" immediate="true" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+        </h:form>
+    </h:body>
+</html>

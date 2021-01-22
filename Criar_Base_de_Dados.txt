@@ -1,0 +1,43 @@
+CREATE TABLE cliente
+(
+  nome VARCHAR(50) NOT NULL,
+  idade INT NOT NULL,
+  contato INT NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  password VARCHAR(500) NOT NULL,
+  nivel INT NOT NULL,
+  PRIMARY KEY (email)
+);
+
+CREATE TABLE trotinete
+(
+  id_trotinete INT NOT NULL,
+  nome VARCHAR(50) NOT NULL,
+  marca VARCHAR(100) NOT NULL,
+  data_registo DATE NOT NULL,
+  estado VARCHAR(50) NOT NULL,
+  localizacao VARCHAR(50) NOT NULL,
+  numero_dias VARCHAR(50),
+  potencia VARCHAR(50),
+  velocidade_maxima VARCHAR(50),
+  tempo_de_carga VARCHAR(50),
+  tipo VARCHAR(50) NOT NULL,
+  alcance VARCHAR(50),
+  litros_deposito VARCHAR(50),
+  peso_maximo VARCHAR(50),
+  email VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id_trotinete),
+  FOREIGN KEY (email) REFERENCES cliente(email)
+);
+
+CREATE TABLE aluguer
+(
+  id_aluguer INT NOT NULL,
+  data_inicio DATE NOT NULL,
+  data_fim DATE NOT NULL,
+  id_trotinete INT NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id_aluguer),
+  FOREIGN KEY (id_trotinete) REFERENCES trotinete(id_trotinete),
+  FOREIGN KEY (email) REFERENCES cliente(email)
+);

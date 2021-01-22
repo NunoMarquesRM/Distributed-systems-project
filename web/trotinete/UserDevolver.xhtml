@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Devolver Trotinetes</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <br/>
+        <br/>
+        <h1> Devolver Trotinete </h1>
+        <br/>
+        <br/> 
+        <div align="center">
+            <h:form styleClass="jsfcrud_list_form">
+                <div align="center">
+                    <h:dataTable value="#{aluguerController.tmp}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAluguerTitle_idAluguer}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idAluguer}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAluguerTitle_dataInicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dataInicio}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAluguerTitle_dataFim}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dataFim}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAluguerTitle_email}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAluguerTitle_idTrotinete}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idTrotinete}"/>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                <br />
+                <br />
+                <h:outputLabel value="IdAluguer: " for="idAluguer" />
+                <h:selectOneMenu id="idAluguer" value="#{aluguerController.selected.idAluguer}" title="#{bundle.CreateAluguerTitle_idTrotinete}"  required="true" requiredMessage="#{bundle.CreateAluguerRequiredMessage_idTrotinete}">
+                    <f:selectItems value="#{aluguerController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <br />
+                <br />
+                <br />
+                <h:outputLabel value="#{bundle.CreateAluguerLabel_idTrotinete}" for="idTrotinete" />
+                <h:selectOneMenu id="idTrotinete" value="#{aluguerController.selected.idTrotinete}" title="#{bundle.CreateAluguerTitle_idTrotinete}"  required="true" requiredMessage="#{bundle.CreateAluguerRequiredMessage_idTrotinete}">
+                    <f:selectItems value="#{trotineteController.itemsAvailableSelectOne}"/>
+                </h:selectOneMenu>
+                <br />
+                <br />
+                <br />
+                <p:commandButton value="Devolver" action="#{aluguerController.remove(aluguerController.selected.idAluguer)}" immediate="true" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <br />
+                <p:commandButton value="Voltar Atrás" action="#{trotineteController.devolverT(aluguerController.novoAluguer.idTrotinete.idTrotinete)}" immediate="true" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </h:form>
+        </div>
+    </h:body>
+</html>

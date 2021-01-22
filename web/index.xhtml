@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Scooters Web Page</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+        <h:form>
+            <br />
+            <div align="center">
+                <h:graphicImage value ="/resources/imagens/logoG1.png" width="200" height="200" />
+            </div> 
+            <br />
+            <br />
+            <div align="center">
+                <p:commandButton immediate="true" action="/login/login" value="Login" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+            <br />
+            <div align="center">
+                <p:commandButton immediate="true" action="/login/registo" value="Registar" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div> 
+            <br />
+        </h:form>
+        <br />
+        <br />
+        <br />
+        <div align="center">
+            <p:contentFlow value="#{imagesView.images}" var="image" style=" width:80%; border: none">
+                <p:graphicImage value="/resources/imagens/#{image}" styleClass="content" />
+            </p:contentFlow>
+        </div>
+        <br />
+        <br />
+        <br />
+        <h:form styleClass="jsfcrud_list_form">
+            <div align="center">
+                <h:panelGroup>
+                    <h:dataTable value="#{trotineteController.items}" var="item" border="0" cellpadding="2" cellspacing="1" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px" >
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Nome"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nome}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Marca"/>
+                            </f:facet>
+                            <h:outputText value="#{item.marca}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Estado"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Localizacao"/>
+                            </f:facet>
+                            <h:outputText value="#{item.localizacao}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="NumeroDias"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroDias}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Potencia"/>
+                            </f:facet>
+                            <h:outputText value="#{item.potencia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Velocidade Maxima"/>
+                            </f:facet>
+                            <h:outputText value="#{item.velocidadeMaxima}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tempo De Carga"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tempoDeCarga}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipo"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Alcance"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alcance}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Litros de Deposito"/>
+                            </f:facet>
+                            <h:outputText value="#{item.litrosDeposito}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Peso Máximo"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pesoMaximo}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+            </div>
+        </h:form>
+        <h:form>
+            <br />
+            <br />
+            <br />
+            <br />
+            <p:growl id="growl" showDetail="true" />
+            <div align="center">
+                <p:chart type="pie" model="#{trotineteController.pieModel1}" style="width:500px; height:550px;"/>
+            </div>  
+            <br />
+            <br />
+            <br />
+            <br />
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <title>Lista de Clientes</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+
+        <h:form styleClass="jsfcrud_list_form">
+            <br/>
+            <br/>
+            <h1> Lista de Clientes </h1>
+            <br/>
+            <br/> 
+            <div align="center">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListClienteEmpty}" rendered="#{clienteController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{clienteController.items.rowCount > 0}">
+                    <h:outputText value="#{clienteController.pagination.pageFirstItem + 1}..#{clienteController.pagination.pageLastItem + 1}/#{clienteController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{clienteController.previousAdmin}" value="#{bundle.Previous} #{clienteController.pagination.pageSize}" rendered="#{clienteController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{clienteController.nextAdmin}" value="#{bundle.Next} #{clienteController.pagination.pageSize}" rendered="#{clienteController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{clienteController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListClienteTitle_nome}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nome}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListClienteTitle_idade}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idade}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListClienteTitle_contato}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contato}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListClienteTitle_email}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListClienteTitle_password}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.password}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListClienteTitle_nivel}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nivel}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{clienteController.prepareViewAdmin}" value="#{bundle.ListClienteViewLink}"/>
+                            <h:outputText value=" "/>
+
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <br />
+                <p:commandButton action="#{clienteController.prepareCreateAdmin}" value="Criar Novo Cliente" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <p:button outcome="/cliente/AdminPage" value="Voltar Atrás" class="boxlogin" >
+                    <f:param name="button1" value="10"/>
+                </p:button>
+            </div>
+        </h:form>
+    </h:body>
+</html>

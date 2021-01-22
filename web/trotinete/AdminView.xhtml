@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Ver Trotinete</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+
+    <h:body class="background">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <h:form>
+            <br/>
+            <br/>
+            <h1> Ver Trotinete </h1>
+            <br/>
+            <br/>
+            <div align="center">
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_idTrotinete}"/>
+                    <h:outputText value="#{trotineteController.selected.idTrotinete}" title="#{bundle.ViewTrotineteTitle_idTrotinete}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_nome}"/>
+                    <h:outputText value="#{trotineteController.selected.nome}" title="#{bundle.ViewTrotineteTitle_nome}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_marca}"/>
+                    <h:outputText value="#{trotineteController.selected.marca}" title="#{bundle.ViewTrotineteTitle_marca}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_dataRegisto}"/>
+                    <h:outputText value="#{trotineteController.selected.dataRegisto}" title="#{bundle.ViewTrotineteTitle_dataRegisto}">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_estado}"/>
+                    <h:outputText value="#{trotineteController.selected.estado}" title="#{bundle.ViewTrotineteTitle_estado}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_localizacao}"/>
+                    <h:outputText value="#{trotineteController.selected.localizacao}" title="#{bundle.ViewTrotineteTitle_localizacao}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_numeroDias}"/>
+                    <h:outputText value="#{trotineteController.selected.numeroDias}" title="#{bundle.ViewTrotineteTitle_numeroDias}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_potencia}"/>
+                    <h:outputText value="#{trotineteController.selected.potencia}" title="#{bundle.ViewTrotineteTitle_potencia}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_velocidadeMaxima}"/>
+                    <h:outputText value="#{trotineteController.selected.velocidadeMaxima}" title="#{bundle.ViewTrotineteTitle_velocidadeMaxima}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_tempoDeCarga}"/>
+                    <h:outputText value="#{trotineteController.selected.tempoDeCarga}" title="#{bundle.ViewTrotineteTitle_tempoDeCarga}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_tipo}"/>
+                    <h:outputText value="#{trotineteController.selected.tipo}" title="#{bundle.ViewTrotineteTitle_tipo}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_alcance}"/>
+                    <h:outputText value="#{trotineteController.selected.alcance}" title="#{bundle.ViewTrotineteTitle_alcance}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_litrosDeposito}"/>
+                    <h:outputText value="#{trotineteController.selected.litrosDeposito}" title="#{bundle.ViewTrotineteTitle_litrosDeposito}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_pesoMaximo}"/>
+                    <h:outputText value="#{trotineteController.selected.pesoMaximo}" title="#{bundle.ViewTrotineteTitle_pesoMaximo}"/>
+                    <h:outputText value="#{bundle.ViewTrotineteLabel_email}"/>
+                    <h:outputText value="#{trotineteController.selected.email}" title="#{bundle.ViewTrotineteTitle_email}"/>
+                </h:panelGrid>
+                <br />
+                <p:commandButton value="Eliminar" action="#{trotineteController.destroyAndView}" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <p:commandButton value="Editar" action="/trotinete/AdminEdit" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <p:commandButton value="Voltar Atrás" action="/trotinete/AdminList" immediate="true" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,26 @@
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (0, 'Up Black', 'Skateflash', '08/06/2020', 'Disponível', 'Macedo de Cavaleiros', '0','350W', '25km/h' ,'4horas', 'Elétrica', '15km/h', '0', '120kg', 'maria@maria.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (1, 'TOWN 7 EF V2', 'OXELO', '01/06/2020', 'Disponível', 'Covilhã', '0','0', '0' ,'0', 'Normal', '0', '0', '0', 'ana@ana.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (2, 'Combustão', 'Skateflash', '05/06/2020', 'Disponível', 'Covilhã', '0','350W', '30km/h' ,'0', 'Combustão', '0', '2L', '100kg', 'joao@joao.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (3, 'Up White', 'Skateflash', '10/06/2020', 'Disponível', 'Porto', '0','350W', '30km/h' ,'4horas', 'Elétrica', '20km/h', '0', '120kg', 'joao@joao.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (4, 'Trotinete de Combustão', 'Ninebot', '05/06/2020', 'Disponível', 'Covilhã', '0','350W', '30km/h' ,'0', 'Combustão', '0', '2L', '100kg', 'joao@joao.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (5, 'TOWN 9 EF V2', 'OXELO', '02/06/2020', 'Disponível', 'Covilhã', '0','0', '0' ,'0', 'Normal', '0', '0', '0', 'ana@ana.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (6, 'Trotinete Combustão x', 'Ninebot', '07/06/2020', 'Disponível', 'Porto', '0','350W', '25km/h' ,'0', 'Combustão', '0', '2L', '110kg', 'ana@ana.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (7, 'Up Black 2', 'Skateflash', '09/06/2020', 'Disponível', 'Macedo de Cavaleiros', '0','350W', '30km/h' ,'5horas', 'Elétrica', '30km/h', '0', '120kg', 'maria@maria.pt');
+
+INSERT INTO Trotinete(id_trotinete, nome, marca, data_registo, estado, localizacao, numero_dias, potencia, velocidade_maxima, tempo_de_carga, tipo, alcance, litros_deposito, peso_maximo, email)
+VALUES (8, 'TOWN 7 X5', 'OXELO', '04/06/2020', 'Disponível', 'Covilhã', '0','0', '0' ,'0', 'Normal', '0', '0', '0', 'maria@maria.pt');

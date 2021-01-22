@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Editar Cliente</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <h:form>
+            <br/>
+            <br/>
+            <h1> Editar Cliente </h1>
+            <br/>
+            <br/> 
+            <div align="center">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditClienteLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{clienteController.selected.nome}" title="#{bundle.EditClienteTitle_nome}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_nome}"/>
+                    <h:outputLabel value="#{bundle.EditClienteLabel_idade}" for="idade" />
+                    <h:inputText id="idade" value="#{clienteController.selected.idade}" title="#{bundle.EditClienteTitle_idade}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idade}"/>
+                    <h:outputLabel value="#{bundle.EditClienteLabel_contato}" for="contato" />
+                    <h:inputText id="contato" value="#{clienteController.selected.contato}" title="#{bundle.EditClienteTitle_contato}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_contato}"/>
+                    <h:outputLabel value="#{bundle.EditClienteLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{clienteController.selected.email}" title="#{bundle.EditClienteTitle_email}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.EditClienteLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{clienteController.selected.password}" title="#{bundle.EditClienteTitle_password}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_password}"/>
+                    <h:outputLabel value="#{bundle.EditClienteLabel_nivel}" for="nivel" />
+                    <h:inputText id="nivel" value="#{clienteController.selected.nivel}" title="#{bundle.EditClienteTitle_nivel}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_nivel}"/>
+                </h:panelGrid>
+                <br />
+                <br />
+                <p:commandButton action="#{clienteController.updateAdmin}" value="Guardar" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <br />
+                <p:commandButton action="/cliente/AdminView" value="Voltar Atrás" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+        </h:form>
+    </h:body>
+</html>

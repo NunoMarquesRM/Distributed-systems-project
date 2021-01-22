@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Criar Novo Aliuguer</title>
+        <link rel="icon" type="image/x-icon" href="resources/imagens/logoG1.png"/>
+        <h:outputStylesheet name="css/Background.css"/>
+    </h:head>
+    <h:body class="background">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <h:form>
+            <br/>
+            <br/>
+            <h1> Criar Novo Aluguer </h1>
+            <br/>
+            <br/> 
+            <div align="center">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAluguerLabel_idAluguer}" for="idAluguer" />
+                    <h:inputText id="idAluguer" value="#{aluguerController.selected.idAluguer}" title="#{bundle.CreateAluguerTitle_idAluguer}" required="true" requiredMessage="#{bundle.CreateAluguerRequiredMessage_idAluguer}"/>
+                    <h:outputLabel value="#{bundle.CreateAluguerLabel_dataInicio}" for="dataInicio" />
+                    <h:inputText id="dataInicio" value="#{aluguerController.selected.dataInicio}" title="#{bundle.CreateAluguerTitle_dataInicio}" required="true" requiredMessage="#{bundle.CreateAluguerRequiredMessage_dataInicio}">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAluguerLabel_dataFim}" for="dataFim" />
+                    <h:inputText id="dataFim" value="#{aluguerController.selected.dataFim}" title="#{bundle.CreateAluguerTitle_dataFim}" required="true" requiredMessage="#{bundle.CreateAluguerRequiredMessage_dataFim}">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAluguerLabel_email}" for="email" />
+                    <h:selectOneMenu id="email" value="#{aluguerController.selected.email}" title="#{bundle.CreateAluguerTitle_email}" required="true" requiredMessage="#{bundle.CreateAluguerRequiredMessage_email}">
+                        <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAluguerLabel_idTrotinete}" for="idTrotinete" />
+                    <h:selectOneMenu id="idTrotinete" value="#{aluguerController.selected.idTrotinete}" title="#{bundle.CreateAluguerTitle_idTrotinete}" required="true" requiredMessage="#{bundle.CreateAluguerRequiredMessage_idTrotinete}">
+                        <f:selectItems value="#{trotineteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <br />
+                <p:commandButton value="Guardar" action="#{aluguerController.createAdmin}" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+                <br />
+                <br />
+                <p:commandButton value="Voltar Atrás" action="/aluguer/AdminList" immediate="true" class="boxlogin">
+                    <f:param name="button1" value="10"/>
+                </p:commandButton>
+            </div>
+        </h:form>
+    </h:body>
+</html>
