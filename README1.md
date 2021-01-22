@@ -1,8 +1,8 @@
-### Manual de Configuração e Instalação
+# Manual de Configuração e Instalação
 
-##Acesso à aplicação:
+## Acesso à aplicação:
 
-#Aceder através do computador pessoal:
+### Aceder através do computador pessoal:
 1. Iniciar o NetBeans ou outro Integrated Development Environment (IDE)
 semelhante;
 2. Criar a base de dados no NetBeans;
@@ -14,14 +14,14 @@ referente aos clientes e trotinetes;
 7. Executar a aplicação e esperar que a página "index" seja aberta no browser;
 8. Assim que abrir o browser poderá usar a aplicação corretamente.
 
-#Aceder através de um computador secundário:
+### Aceder através de um computador secundário:
 1. A aplicação tem de estar a funcionar corretamente no computador que
 está a executar a mesma;
 2. É necessário expor os serviços na Local Area Network (LAN) para os utilizadores de Internet externos;
 3. Desta forma a aplicação fica disponível online através do link http://
 188.83.119.118:8080/ProjetoSD_Final1/faces/index.xhtml;
 
-#Execução e funcionalidades da aplicação:
+## Execução e funcionalidades da aplicação:
 • Após a iniciação da aplicação no servidor e a abertura do browser com
 a página inicial (index) pode-se proceder da seguinte maneira:
 1. "Botão Login" – permite a entrada na área reservada de cada cliente (utilizador já registado).
@@ -41,7 +41,7 @@ que permite que os utilizadores não registados consultem (mas
 não alterem) os dados relativos às trotinetes e de um gráfico com
 as estatísticas das trotinetes.
 
-#Login como Administrador:
+## Login como Administrador:
 Possibilita a entrada na área do admintrador previamente registado:
 1. "Botão Mostrar Alugueres – permite consultar a lista dos alugueres apresentando a lista dos alugueres:
 
@@ -74,7 +74,7 @@ c) Criar novas trotinetes;
 
 d) Voltar para a página do administrador.
 
-#Login como Utilizador Registado:
+## Login como Utilizador Registado:
 Possibilita:
 1. "Botão Inserir" – permite o utilizador inserir as suas trotientes de forma
 a estarem disponíveis para serem requisitadas;
