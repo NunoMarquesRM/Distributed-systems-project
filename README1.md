@@ -25,12 +25,17 @@ está a executar a mesma;
 • Após a iniciação da aplicação no servidor e a abertura do browser com
 a página inicial (index) pode-se proceder da seguinte maneira:
 1. "Botão Login" – permite a entrada na área reservada de cada cliente (utilizador já registado).
+
 a) Iniciar sessão introduzindo o Username e a Password.
+
 b) Carregar em "Entrar".
+
 2. "Botão Registar" – permite o registo de um novo cliente (utilizador
 ainda por registar).
+
 a) Registo introduzindo o Nome, a Idade, o Contacto, o Email e
 a Password.
+
 3. Apresentação de algumas imagens de trotinetes, de uma tabela
 que permite que os utilizadores não registados consultem (mas
 não alterem) os dados relativos às trotinetes e de um gráfico com
@@ -39,20 +44,34 @@ as estatísticas das trotinetes.
 #Login como Administrador:
 Possibilita a entrada na área do admintrador previamente registado:
 1. "Botão Mostrar Alugueres – permite consultar a lista dos alugueres apresentando a lista dos alugueres:
+
 a) Remover alugueres;
+
 b) Editar alugueres;
+
 c) Criar novo aluguer;
+
 d) Voltar para a página do administrador.
+
 2. "Botão Mostrar Clientes" – possibilita a visualização de uma tabela referente aos clientes registados:
+
 a) Remover clientes;
+
 b) Editar clientes;
+
 c) Criar novo cliente;
+
 d) Voltar para a página do administrador.
+
 3. "Botão Mostrar Trotinetes" – permite a consulta da tabela de trotinetes
 que já estão introduzidas:
+
 a) Remover trotinetes;
+
 b) Editar trotinetes;
+
 c) Criar novas trotinetes;
+
 d) Voltar para a página do administrador.
 
 #Login como Utilizador Registado:
